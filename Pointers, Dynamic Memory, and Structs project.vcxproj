@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="Pointers, Dynamic Memory, and Structs project.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="student.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
