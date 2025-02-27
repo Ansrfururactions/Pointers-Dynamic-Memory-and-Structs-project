@@ -1,5 +1,4 @@
-// Pointers, Dynamic Memory, and Structs project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//this program takes an array and uses pointers to reverse it.
 
 #include <iostream>
 using namespace std;
@@ -37,7 +36,7 @@ void print(int const arr[], int size, int* p)
 	{
 		cout <<  arr[size] << " ";
 	}
-	cout << endl;
+	cout << endl << endl;
 	cout << "reversed array:" << " ";
 	for (int I=9; I>= 0; I--)
 	{
