@@ -1,5 +1,4 @@
-// Pointers, Dynamic Memory, and Structs project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//this project uses a struct to dynamically store data read from a file, then uses that data to print a report.
 
 #include <iostream>
 #include <string>
