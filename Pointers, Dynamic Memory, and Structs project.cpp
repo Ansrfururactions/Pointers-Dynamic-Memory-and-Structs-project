@@ -11,8 +11,8 @@ struct Student {
     string name;
     int ID;
     int* grades;
-    double* average;
-    char* letter;
+    double average;
+    char letter;
 };
 
 string filename = "student.txt";
@@ -40,6 +40,11 @@ int main()
     getLettergrade(students, studentCnt, testsCnt);
     printreport(students, studentCnt);
 
+   // for (int D = 0; D < studentCnt; D++)
+   // {
+   //     delete students[D].grades;
+   // }
+  //  delete students;
   
 }
 
@@ -67,73 +72,49 @@ void calcAverage(Student students[], int studentCnt, int testsCnt)
 {
     for (int r = 0; r < studentCnt; r++)
     {
+
         double sum = 0;
-        students[r].average = new double[studentCnt];
         for (int egg = 0; egg < testsCnt; egg++)
         {
             sum = sum + students[r].grades[egg];
             
         }
-        *students[r].average = sum / testsCnt;
+       students[r].average = sum / testsCnt;
     }
 }
 void getLettergrade(Student students[], int studentCnt, int testsCnt)
 {
     for (int r = 0; r < studentCnt; r++)
     {
-        students[r].letter = new char[studentCnt];
         
-        if (*students[r].average >= 90.0)
+        if (students[r].average >= 90.0)
         {
-            *students[r].letter = 'A';
+            students[r].letter = 'A';
         }
-        else if (*students[r].average >= 80.0)
+        else if (students[r].average >= 80.0)
         {
-            *students[r].letter = 'B';
+            students[r].letter = 'B';
         }
-        else if (*students[r].average >= 70.0)
+        else if (students[r].average >= 70.0)
         {
-            *students[r].letter = 'C';
+            students[r].letter = 'C';
         }
-        else if (*students[r].average >= 60.0)
+        else if (students[r].average >= 60.0)
         {
-            *students[r].letter = 'D';
+            students[r].letter = 'D';
         }
         else
         {
-            *students[r].letter = 'F';
+            students[r].letter = 'F';
         }
     }
 }
 
 void printreport(Student students[], int studentCnt)
 {
-    for (int N = 0; N <=studentCnt; N++)
-    {
-        cout << students[N].name << " " << students[N].ID << " " << *students[N].average << " " << *students[N].letter;
-        cout << endl;
-    }
-
-    const int ptrconst = 6;
-    const int ptrconst2 = 6;
-    string* ptr[ptrconst];
-    int* ptr2[ptrconst2];
-    
     for (int N = 0; N < studentCnt; N++)
     {
-        *ptr[N] = students[N].name;
+        cout << students[N].name << " " << students[N].ID << " " << students[N].average << " " << students[N].letter;
+        cout << endl;
     }
-    for(int e=0;e<studentCnt; e++)
-    {
-        *ptr2[e] = students[e].ID;
-    }
-    for (int D = 0; D < studentCnt; D++)
-    {
-        delete students[D].grades;
-        delete students[D].average;
-        delete students[D].letter;
-        delete[] ptr;
-        delete[] ptr2;
-    }
-    
 }
